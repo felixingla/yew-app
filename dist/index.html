@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head>
+  <link rel="shortcut icon" type="image/x-icon" href="/art/ico.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+<link rel="preload" href="/yew-app-241ce7b20363070f_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/yew-app-241ce7b20363070f.js"></head>
+<body>
+
+<header>
+  <a class="header" href="index.html"> Felix Ingla </a>
+</header>
+
+<section>
+  I'm a Product Manager at <a href="https://www.abacum.io"> Abacum</a>
+  <br><br>
+  Outside of work I like to <a class="red" href="https://github.com/felixingla">code</a>, <a class="blue"> write</a>, or <a class="yellow" href="https://instagram.com/felix.ingla">make art</a>
+  <br><br>
+  You can check what I've done recently below:
+</section>
+
+<section>
+  <li> 
+    <a href="/cigar_box.html">Cigar Boxes</a> 
+    <mark class="yellow">Art</mark>
+     <small>Dec 12, 2022</small>
+  </li>
+  
+  <li>
+    <a href="https://medium.com/dataseries/the-ultimate-farming-tool-is-data-cc8ecd79f00">The Ultimate Farming Tool Is Data</a>
+    <mark class="blue">Write</mark>
+    <small>Nov 13, 2019 </small>
+  </li>
+    
+  
+  <li>
+    <a href="https://medium.com/p/30d66903cf9
+">How Conversational AI Is Transforming the Customer Journey</a> 
+    <mark class="blue">Write</mark>
+    <small>Oct 14, 2019 </small>
+  </li> 
+  
+</section>
+
+<footer>
+  <hr class="solid"> 
+  <br><br>
+<a href="https://github.com/felixingla">Github</a> · 
+<a href="https://twitter.com/felixingla">Twitter</a> · 
+<a href="https://instagram.com/felix.ingla">Instagram</a>
+</footer><script type="module">import init from '/yew-app-241ce7b20363070f.js';init('/yew-app-241ce7b20363070f_bg.wasm');</script><script>(function () {
+    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = protocol + '//' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
